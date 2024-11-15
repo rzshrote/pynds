@@ -13,6 +13,8 @@ def test_minimizing_dominance_relationship_1d():
     x = numpy.array([0.0], dtype = float)
     y = numpy.array([0.0], dtype = float)
     assert dominance_relationship(x, y) == 0
+    assert dominance_relationship(x, x) == 0
+    assert dominance_relationship(y, y) == 0
 
     # x is dominated by y
     x = numpy.array([1.0], dtype = float)
@@ -38,6 +40,8 @@ def test_minimizing_dominance_relationship_2d():
     x = numpy.array([0.0, 1.0], dtype = float)
     y = numpy.array([1.0, 0.0], dtype = float)
     assert dominance_relationship(x, y) == 0
+    assert dominance_relationship(x, x) == 0
+    assert dominance_relationship(y, y) == 0
 
     # x is dominated by y
     x = numpy.array([1.0, 1.0], dtype = float)
@@ -72,6 +76,8 @@ def test_minimizing_dominance_relationship_3d():
     x = numpy.array([0.0, 0.0, 1.0], dtype = float)
     y = numpy.array([1.0, 1.0, 0.0], dtype = float)
     assert dominance_relationship(x, y) == 0
+    assert dominance_relationship(x, x) == 0
+    assert dominance_relationship(y, y) == 0
 
     # x is dominated by y
     x = numpy.array([1.0, 1.0, 1.0], dtype = float)
